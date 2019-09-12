@@ -4,23 +4,30 @@
 }
 
 body{
-    background-color:black;
-    margin: 0;
-    padding: 0;
+    background-color: black;
+    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Aladin', cursive;
+    font-family: 'Stardos Stencil', cursive;
+    line-height: 30px;
     font-size: 20px;
     color: white;
 }
 
-.col-md-10{
-    background: url(../images/2-WordGuess.jpg);
-    height: 350px;
-    margin-left: 130px;
-    
+.navbar{
+    background: url("../images/2-WordGuess.jpg");
+    height: 330px;
+    margin-left: 70px;
+    margin-right: 70px;
 }
 
-.col-md-4{
+p{
+    margin-bottom: 30px;
+}
+
+
+.col-md-2{
     border: 5px dashed white;
-    height: 500px;
+    height: 600px;
     padding: 30px;
     text-align: center;
 }

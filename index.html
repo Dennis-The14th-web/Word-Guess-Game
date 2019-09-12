@@ -7,27 +7,96 @@
     <title>Word Guess Game</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/reset.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Aladin|Cinzel+Decorative:900|Stardos+Stencil&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">  -->
 </head>
 <body>
-    <div class="row">
-        <div class="col-md-10"></div>
-    </div>
 
+    <nav class="navbar">
+          
+    </nav>
 
     <div class="row">
-        <div class="col-md-2"></div>
         <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <p id="direction-text">PRESS ANY KEY TO GET STARTED!</p>  
+        <div class="col-md-2"></div>
+        <div class="col-md-2">
+            <p id="directions-text">PRESS ANY KEY TO GET STARTED!</p> 
+            <p id="computerchoices-text"></p> 
             <p id="wins-text"></p>
-            <p id="correctword-text"></p>
+            <p id="currentword-text"></p>
             <p id="guessesleft-text"></p>
             <P id="userguess-text"></P> 
         </div>
         
     </div>
-    
+
+    <script>
+
+            var computerChoices = ["BONJOVI","WILLSMITH","DRDRE","MARYMARY","EBEN"];
+            console.log(computerChoices); 
+            
+            var wins = "";
+            var currentWord = [];
+            var guessesLeft = 13;
+            var userGuess = [];
+
+            var directionsText = document.getElementById("directions-text");
+            var computerChoicesText = document.getElementById("computerchoices-text");
+            var winsText = document.getElementById("wins-text");
+            var currentWordText = document.getElementById("currentword-text");
+            var guessesLeftText = document.getElementById("guessesleft-text");
+            var userGuessText = document.getElementById("userguess-text");
+            console.log(directionsText,computerChoicesText,winsText,currentWordText,guessesLeftText,userGuessText);
+
+            var computerChose = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            console.log(computerChose);
+
+// if computerChose.includes(userGuess) 
+// then update element with current word with the letter the person chose
+            document.onkeypress = function(event) {
+            
+            userGuess.push(event.key);
+
+            // for (currentWord = 0; currentWord < userGuess; currentWord++){
+
+                var currentWord = Math.floor(Math.random() * tmp.length);
+
+            }
+
+            
+
+
+            if (userGuess === currentWord){
+                guessesLeft = 13;
+                userGuess = [];
+                wins++;
+
+                var computerChose = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            }
+
+            else {
+                guessesLeft--;
+            }
+
+            
+
+            directionsText.innerHTML = "PRESS ANY KEY TO GET STARTED!";
+
+            winsText.innerHTML = "WINS " + wins;
+            currentWordText.innerHTML = "CURRENTWORD " + currentWord;
+            guessesLeftText.innerHTML = "NUMBER OF GUESSES REMAINING " + guessesLeft;
+            userGuessText.innerHTML = "LETTERS ALREADY GUESSED " + userGuess;
+
+            }
+
+
+       
+               
+           
+           
+           
+           
+       </script>
     
 </body>
 </html>
